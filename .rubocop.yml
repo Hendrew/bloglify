@@ -1,8 +1,42 @@
-# Omakase Ruby styling for Rails
-inherit_gem: { rubocop-rails-omakase: rubocop.yml }
+require:
+  - rubocop-performance
+  - rubocop-rails
 
-# Overwrite or add rules to create your own house style
-#
-# # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
-# Layout/SpaceInsideArrayLiteralBrackets:
-#   Enabled: false
+AllCops:
+  TargetRubyVersion: 4.0.5
+  SuggestExtensions: false
+  Exclude:
+    - .github
+    - .kamal
+    - bin/**/*
+    - config/**/*
+    - db/**/*
+    - lib/tasks/*.rake
+    - node_modules/**/*
+    - public/**/*
+    - tmp/**/*
+    - log/**/*
+    - vendor/**/*
+
+Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Layout/LineLength:
+  Max: 130
+
+Metrics/ClassLength:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+  # If `true`, strings which span multiple lines using `\` for continuation must
+  # use the same type of quotes on each line.
+  ConsistentQuotesInMultiline: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
