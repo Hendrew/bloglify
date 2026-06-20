@@ -1,0 +1,18 @@
+PreCommit:
+  RuboCop:
+    enabled: true
+    command: ["bundle", "exec", "rubocop"]  # Usa a versão do projeto
+    problem_on_unmodified_line: warn
+
+  TrailingWhitespace:
+    enabled: true
+
+PrePush:
+  RSpec:
+    enabled: true
+    command: ["bundle", "exec", "rspec"]
+    required: true
+
+CommitMsg:
+  SingleLineSubject:
+    enabled: true
