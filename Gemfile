@@ -54,6 +54,7 @@ group :development, :test do
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
 
+  gem "rspec-rails", "~> 8.0"
   gem "rubocop", "~> 1.88", require: false
   gem "rubocop-performance", "~> 1.26", require: false
   gem "rubocop-rails", "~> 2.35", require: false
@@ -62,4 +63,13 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+end
+
+group :test do
+  gem "capybara", "~> 3.40"
+  gem "database_cleaner-active_record", "~> 2.2"
+  gem "factory_bot_rails", "~> 6.5"
+  gem "faker", "~> 3.8"
+  gem "selenium-webdriver", "~> 4.45"
+  gem "shoulda-matchers", "~> 8.0"
 end
