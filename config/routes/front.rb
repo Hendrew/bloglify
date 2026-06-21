@@ -1,5 +1,6 @@
 scope module: :front do
-  resources :articles
+  get "/", to: "articles#index", as: :articles
+  get "/:slug", to: "articles#show", as: :article
 
   root "articles#index"
 end

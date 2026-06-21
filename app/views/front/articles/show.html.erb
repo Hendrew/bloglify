@@ -1,0 +1,11 @@
+<div class="show_article">
+  <h2><%= @article.title %></h2>
+
+  <p>
+    Por <strong><%= @article.user.name %></strong> em <%= @article.created_at.strftime("%d/%m/%Y às %H:%Mh") %>
+  </p>
+
+  <div class="content">
+    <%= @article.body.gsub("\n", "<br>").html_safe %>
+  </div>
+</div>

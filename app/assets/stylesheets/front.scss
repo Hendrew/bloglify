@@ -15,92 +15,11 @@ body {
   color: #343434;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 12px;
-  padding-bottom: 12px;
-
-  border-bottom: 1px solid #F0F0F0;
-
-  .logo {
-    margin-left: 16px;
-  }
-
-  nav {
-    margin-right: 16px;
-
-    ul {
-      li {
-        list-style-type: none;
-        display: inline-block;
-        padding-left: 10px;
-        padding-right: 10px;
-
-        a {
-          text-decoration: none;
-          color: #343434;
-
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-  }
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-main {
-  padding-top: 50px;
-  padding-bottom: 50px;
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-}
-
-article {
-  width: 960px;
-
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 24px;
-
-  border: 1px solid #F0F0F0;
-  border-radius: 6px;
-  padding: 12px 24px;
-
-  h2 {
-    font-size: 38px;
-  }
-
-  p {
-    margin-top: 12px;
-    margin-bottom: 12px;
-    font-size: 14px;
-  }
-
-  .resume {
-    font-size: 16px;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  &:hover {
-    background-color: #F9F9F9;
-  }
-}
-
-footer {
-  border-top: 1px solid #F0F0F0;
-
-  .rights {
-    text-align: center;
-    padding-top: 25px;
-    padding-bottom: 25px;
-  }
-}
+@import "./front/header";
+@import "./front/main";
+@import "./front/footer";

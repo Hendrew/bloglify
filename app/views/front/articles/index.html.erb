@@ -1,11 +1,13 @@
-<a href="#">
+<% @articles.each do |article| %>
+<a href="<%= article.slug %>">
   <article>
-    <h2>7 passoa para o primeiro passo</h2>
+    <h2><%= article.title %></h2>
     <p>
-      Por <strong>Hendrew</strong> em 29/09/2026 às 11:20h
+      Por <strong><%= article.user.name %></strong> em <%= article.created_at.strftime("%d/%m/%Y às %H:%Mh") %>
     </p>
     <div class="resume">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ipsum impedit culpa, autem nemo tempore perferendis at. Consequuntur molestiae aut asperiores quos, laboriosam similique reiciendis itaque voluptate dicta nihil corrupti?
+      <%= truncate(article.body, length: 100, omission: "...") %>
     </div>
   </article>
 </a>
+<% end %>
