@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
     <title><%= content_for(:title) || "Bloglify" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -23,7 +23,34 @@
     <%= javascript_include_tag "front", "data-turbo-track": "reload", type: "module" %>
   </head>
 
+  <header>
+    <div class="logo">
+      <h1>Nomadev</h1>
+    </div>
+
+    <nav>
+      <ul>
+        <li>
+          <a href="#">home</a>
+        </li>
+        <li>
+          <a href="#">sobre</a>
+        </li>
+        <li>
+          <a href="#">contato</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
   <body>
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
   </body>
+
+  <footer>
+    <div class="rights">
+      &copy; <strong>Nomadev</strong> <%= Date.current.year %> - Todos os direitos reservados
+    </div>
+  </footer>
 </html>
