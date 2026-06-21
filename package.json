@@ -3,9 +3,11 @@
   "private": true,
   "scripts": {
     "build": "bun bun.config.js",
-    "build:css:compile": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
-    "build:css:prefix": "postcss ./app/assets/builds/application.css --use=autoprefixer --output=./app/assets/builds/application.css",
-    "build:css": "bun run build:css:compile && bun run build:css:prefix",
+    "build:css:front:compile": "sass ./app/assets/stylesheets/front.scss:./app/assets/builds/front.css --no-source-map --load-path=node_modules",
+    "build:css:front:prefix": "postcss ./app/assets/builds/front.css --use=autoprefixer --output=./app/assets/builds/front.css",
+    "build:css:backoffice:compile": "sass ./app/assets/stylesheets/backoffice.scss:./app/assets/builds/backoffice.css --no-source-map --load-path=node_modules",
+    "build:css:backoffice:prefix": "postcss ./app/assets/builds/backoffice.css --use=autoprefixer --output=./app/assets/builds/backoffice.css",
+    "build:css": "bun run build:css:front:compile && bun run build:css:front:prefix && bun run build:css:backoffice:compile && bun run build:css:backoffice:prefix",
     "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"bun run build:css\""
   },
   "dependencies": {

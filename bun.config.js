@@ -3,7 +3,7 @@ import fs from 'fs';
 
 const config = {
   sourcemap: "external",
-  entrypoints: ["app/javascript/application.js"],
+  entrypoints: ["app/javascript/front.js", "app/javascript/backoffice.js"],
   outdir: path.join(process.cwd(), "app/assets/builds"),
 };
 

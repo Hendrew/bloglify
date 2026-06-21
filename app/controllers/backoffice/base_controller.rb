@@ -2,5 +2,6 @@
 
 module Backoffice
   class BaseController < ApplicationController
+    layout "backoffice/application"
   end
 end
