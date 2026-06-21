@@ -23,7 +23,12 @@
     <%= javascript_include_tag "backoffice", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="bg-dark">
+    <%= render partial: "layouts/backoffice/shared/nav" %>
+    <%= render partial: "layouts/backoffice/shared/flash" %>
+    <main class="bg-white">
+      <%= yield %>
+    </main>
+    <%= render partial: "layouts/backoffice/shared/footer" %>
   </body>
 </html>
