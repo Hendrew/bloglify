@@ -1,0 +1,16 @@
+  <div class="container">
+    <div class="page_header border-bottom py-5 align-items-center">
+      <div class="text-center">
+        <h2 class="p-0 m-0"><%= @article.title %></h2>
+        <p class="mt-2">
+          Criado por <strong><%= @article.user.name %></strong> em <%= @article.created_at.strftime("%d/%m/%Y às %H:%Mh") %>
+        </p>
+
+        <%= link_to "Voltar", backoffice_articles_path, class: "btn btn-sm btn-outline-secondary", alt: "back" %>
+      </div>
+    </div>
+
+    <div class="page-body py-5">
+      <%= @article.body %>
+    </div>
+  </div>

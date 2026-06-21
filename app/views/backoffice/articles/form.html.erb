@@ -1,0 +1,32 @@
+  <div class="container">
+    <div class="page_header border-bottom py-5 d-flex justify-content-between align-items-center">
+      <h2 class="p-0 m-0"><%= @article.new_record? ? "Novo" : "Editar" %> Artigo</h2>
+
+      <nav class="action_buttons">
+        <%= link_to "Voltar", backoffice_articles_path, class: "btn btn-outline-secondary", alt: "back" %>
+      </nav>
+    </div>
+
+    <div class="page-body py-5">
+      <%= render "backoffice/shared/form_errors", record: @article %>
+
+      <%= form_with(model: [:backoffice, @article]) do |form| %>
+        <div class="mb-3">
+          <%= form.label :title, nil, class: "form-label is-required" %>
+          <%= form.text_field :title, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :body, nil, class: "form-label is-required" %>
+          <%= form.text_area :body, class: "form-control", rows: 5 %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :active, nil, class: "form-label" %>
+          <%= form.select(:active, [["Ativo", true], ["Inativo", false]], {}, class: "form-select") %>
+        </div>
+
+        <%= form.submit nil, class: "btn btn-primary mt-2" %>
+      <% end %>
+    </div>
+  </div>

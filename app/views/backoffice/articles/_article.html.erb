@@ -1,0 +1,27 @@
+<tr id="<%= dom_id article %>" class="align-middle">
+  <td><%= article.title %></td>
+  <td><%= article.user.name %></td>
+  <td><%= article.active? ? "Ativo" : "Inativo" %></td>
+  <td><%= article.created_at.strftime("%d/%m/%Y às %H:%Mh") %></td>
+  <td class="text-end">
+    <div class="btn-group">
+      <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Ações
+      </button>
+      <ul class="dropdown-menu position-fixed">
+        <li>
+          <%= link_to "Visualizar", backoffice_article_path(article), class: "dropdown-item", alt: "show" %>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+          <%= link_to "Editar", edit_backoffice_article_path(article), class: "dropdown-item", alt: "edit" %>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+          <%= link_to "Excluir", [:backoffice, article], action: :destroy,
+              data: { turbo_method: :delete, turbo_confirm: "Você tem certeza?" }, class: "dropdown-item", alt: "delete" %>
+        </li>
+      </ul>
+    </div>
+  </td>
+</tr>
