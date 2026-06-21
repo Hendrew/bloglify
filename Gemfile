@@ -75,3 +75,5 @@ group :test do
   gem "selenium-webdriver", "~> 4.45"
   gem "shoulda-matchers", "~> 8.0"
 end
+
+gem "devise", "~> 5.0"
