@@ -22,7 +22,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_21_115518) do
     t.string "slug", null: false
     t.string "title", null: false
     t.datetime "updated_at", null: false
+    t.uuid "user_id", null: false
     t.index ["title"], name: "index_articles_on_title", unique: true
+    t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -38,4 +40,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_21_115518) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "articles", "users"
 end
